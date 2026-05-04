@@ -3,7 +3,7 @@ using LinearAlgebra
 
 # ================= PARÂMETROS DE CONFIGURAÇÃO =================
 const TAMANHO_RASTRO = 75 
-const OFFSET_ROTULO = 2.0  # Aumentei um pouco para separar mais do planeta
+const OFFSET_ROTULO = 2.0 
 # ==============================================================
 
 # 1. Configuração da Figura e Eixo
@@ -14,8 +14,6 @@ limits!(ax, -40, 40, -40, 40, -5, 8)
 hidedecorations!(ax) 
 hidespines!(ax)
 
-# 2. Inclui as meshes
-# Certifique-se de que o arquivo "CorposCelestiais.jl" está na mesma pasta
 include("CorposCelestiais.jl")
 
 # ================= FUNÇÕES AUXILIARES =================
@@ -28,7 +26,7 @@ end
 
 function inicializar_rotulo!(ax, nome)
     pos_obs = Observable(Point3f(0, 0, 0)) 
-    # CORREÇÃO AQUI: 'textsize' virou 'fontsize'
+    
     text!(ax, pos_obs, text = nome, color = :white, 
           align = (:center, :bottom), fontsize = 10, justification = :center)
     return pos_obs
