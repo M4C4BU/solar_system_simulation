@@ -24,19 +24,6 @@ using Pkg
 Pkg.add("GLMakie")
 ```
 
-## Como rodar
-
-1. Abra o Julia na pasta do projeto.
-2. Execute o script:
-
-```julia
-include("sistema_solar.jl")
-```
-
-Uma janela abre com a cena 3D. Dá pra girar e dar zoom com o mouse enquanto os planetas orbitam.
-
-A primeira execução costuma demorar, porque o Julia compila o GLMakie na primeira vez que ele é carregado. As seguintes são bem mais rápidas.
-
 ## O que dá pra mexer
 
 - **Velocidades das órbitas:** mudar as velocidades relativas muda o ritmo da animação.
